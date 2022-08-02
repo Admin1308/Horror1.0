@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Скорость игрока")]
+    [Header("Mooving Speed Player")]
     public float speed = 0.1f;
     public float speedrun = 0.2f;
    
