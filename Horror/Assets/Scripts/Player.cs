@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] float staminaRetern = 10f;
     [SerializeField] Slider StaminaSliider;
     [SerializeField] Text textStamina;
+    [SerializeField] Light Torchis;
 
     [Header("Mooving Speed Player")]
     public float speedMove = 1f;
@@ -65,3 +66,4 @@ public class Player : MonoBehaviour
 
     }
 }
+
