@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraControllerMove : MonoBehaviour
+public class CameraControllerMove : MonoBehaviour   
 {
     float xRot;
     float yRot;
