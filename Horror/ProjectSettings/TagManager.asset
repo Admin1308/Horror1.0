@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Pered
+  - Stop
+  - Emmet
+  - Game_object
   layers:
   - Default
   - TransparentFX
@@ -11,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Pered
+  - Stop
+  - Emmet
+  - Game_object
   - 
   - 
   - 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraControllerMove : MonoBehaviour   
@@ -10,10 +8,12 @@ public class CameraControllerMove : MonoBehaviour
     float yRotCurrent;
     public Camera player;
     public GameObject Playergameobject;
-    public float sancivity = 5f;
-    public float smoothTime = 0.1f;
+    public float sancivity = 1f;
+    public float smoothTime = 0.08f;
     float CurrentVelocityX;
     float CurrentVelocitY;
+    public GameObject FL;
+    public float smoothTimeFL = 0.08f;
 
 
 
@@ -37,6 +37,7 @@ public class CameraControllerMove : MonoBehaviour
 
         player.transform.rotation= Quaternion.Euler(-yRotCurrent, xRotCurrent, 0f);
         Playergameobject.transform.rotation = Quaternion.Euler(0f, xRotCurrent, 0f);
+        FL.transform.rotation = Quaternion.Euler(-yRotCurrent, xRotCurrent, 0f * Time.deltaTime);
 
     }
 }

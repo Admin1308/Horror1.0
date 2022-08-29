@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class interactive : MonoBehaviour
+public class Interactive : MonoBehaviour
 {
 
     [SerializeField] private Camera fpsCamera;
     private Ray _ray;
     private RaycastHit _hit;
+    private GameObject gamesObject;
+    private bool Examination = false;
 
     [SerializeField ]private float _maxDistanceRey;
 

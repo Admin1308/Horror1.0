@@ -9,9 +9,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float staminaRetern = 10f;
     [SerializeField] private Slider StaminaSliider;
     [SerializeField] private Text textStamina;
+    public Image Fill;
     [SerializeField] private AudioSource Move;
     [Range (0,10)][SerializeField] public float smootchMoving;
-    public bool isShift = true;
+    private bool isShift = true;
 
     [Header("Mooving Speed Player")]
     public float speedMove = 1f;
@@ -54,9 +55,11 @@ public class Player : MonoBehaviour
             if ((Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.W))))
             {
                 speed_Current = speed_Current = Mathf.Lerp(speed_Current, speedrun, Time.deltaTime);
-                staminaValue -= staminaRetern * Time.deltaTime * 5;
+                staminaValue -= staminaRetern * Time.deltaTime * 4;
             }
-     }
+            else
+                speed_Current = speed_Current = Mathf.Lerp(speed_Current, speedMove, Time.deltaTime);
+        }
 
 }
     private void Stamina()
@@ -65,7 +68,7 @@ public class Player : MonoBehaviour
         if (staminaValue < 0) staminaValue = 0;
         textStamina.text = StaminaSliider.value.ToString();
         StaminaSliider.value = staminaValue;
-        staminaValue += staminaRetern * Time.deltaTime * 2;
+        staminaValue += staminaRetern * Time.deltaTime;
 
         if (staminaValue <= 1f)
         {
@@ -78,9 +81,14 @@ public class Player : MonoBehaviour
         }
         if (staminaValue > 42f)
         {
-            isShift = true;    
+            isShift = true;   
+        }
+        if (staminaValue >= 100)
+        {
+            Fill.enabled = false;
         }
         
+        else Fill.enabled = true;
     }
 
 }
